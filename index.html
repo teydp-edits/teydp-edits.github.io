@@ -1,0 +1,210 @@
+TEST<b>
+  line2<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tey Dela Peña — Video Editor</title>
+<meta name="description" content="Tey Dela Peña edits podcasts, short-form and story-driven video for coaches, educators and creators. Based in the Philippines, working with US and PH clients.">
+<meta property="og:title" content="Tey Dela Peña — Video Editor">
+<meta property="og:description" content="Podcast and short-form editing for coaches, educators and creators.">
+<meta property="og:image" content="https://i.vimeocdn.com/video/2230925043-64417aa81eea06e158fc8891d78a1018c0a58154c7fa101587c8ceab3cb5b8f3-d_1280?region=us">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet, cinematic, confident — an editor's reel, not a sales page
+   IDEA: an edit timeline — work laid out as clips, a red playhead marks what's playing
+   PICTURE: the Sino Ka still, large, as the opening frame
+   COLOUR/TYPE: near-black ground, warm off-white ink, one playhead red; Inter labels over Times italic headings
+   LAYOUT: full-bleed hero, then clip rows: vertical reels in threes, horizontal pieces in twos */
+:root{--bg:#0e0e0f;--panel:#17171a;--ink:#f2efe9;--mute:#a7a39b;--line:#2a2a2e;--red:#e5383b}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.serif{font-family:"Times New Roman",Times,serif;font-style:italic;font-weight:400}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:rgba(14,14,15,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+nav b{font-weight:600}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{text-decoration:none;color:var(--mute)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;border:0;font:600 15px Inter,sans-serif;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,15,.2) 30%,var(--bg) 96%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:clamp(32px,6vw,72px);width:100%}
+.hero h1{font-size:clamp(40px,6.4vw,76px);line-height:1.02;margin:0 0 14px;max-width:15ch;text-wrap:balance}
+.hero p{font-size:clamp(17px,1.8vw,20px);color:#d9d5cd;max-width:56ch;margin:0 0 26px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.feat{margin-top:28px;display:flex;gap:14px;align-items:center;font-size:14px;color:var(--mute)}
+.feat button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-weight:500}
+.play{width:44px;height:44px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none}
+.play:before{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.clients{border-block:1px solid var(--line)}
+.clients .wrap{display:flex;flex-wrap:wrap;gap:10px 34px;align-items:center;padding-block:20px;color:var(--mute);font-size:15px}
+.clients strong{color:var(--ink);font-weight:500}
+section{padding:clamp(48px,7vw,96px) 0}
+h2{font-size:clamp(32px,4.4vw,48px);line-height:1.05;margin:0 0 10px;text-wrap:balance}
+.lede{color:var(--mute);max-width:62ch;margin:0 0 32px;font-size:17px}
+.grid{display:grid;gap:clamp(14px,2vw,24px)}
+.v3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.h2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.h3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.clip{all:unset;display:block;cursor:pointer;position:relative}
+.thumb{position:relative;border-radius:10px;overflow:hidden;background:var(--panel);aspect-ratio:16/9}
+.v .thumb{aspect-ratio:9/16}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.clip:hover img{transform:scale(1.03)}
+.thumb .play{position:absolute;left:14px;bottom:14px;opacity:.95}
+.thumb:after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s}
+.clip:hover .thumb:after,.clip:focus-visible .thumb:after{transform:scaleX(1)}
+.clip:focus-visible{outline:2px solid var(--red);outline-offset:4px;border-radius:12px}
+.meta{padding:12px 2px 0}
+.meta h3{margin:0;font-size:16px;font-weight:600;line-height:1.35}
+.meta p{margin:3px 0 0;font-size:14px;color:var(--mute)}
+.dur{font-variant-numeric:tabular-nums;white-space:nowrap}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(20px,4vw,56px);align-items:start}
+.case aside{position:sticky;top:90px}
+.case ol{margin:18px 0 0;padding-left:20px;color:var(--mute)}
+.case li{margin-bottom:8px}
+.split{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(14px,2vw,24px);align-items:start}
+.stackcol{display:grid;gap:clamp(14px,2vw,24px)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.svc{background:var(--bg);padding:28px 26px}
+.svc h3{margin:0 0 8px;font-size:24px}
+.svc p{margin:0;color:var(--mute);font-size:15px}
+.svc ul{margin:14px 0 0;padding-left:18px;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:8px}
+.steps div{border-top:1px solid var(--line);padding-top:16px}
+.steps b{display:block;font-size:17px;margin-bottom:4px}
+.steps span{color:var(--mute);font-size:15px}
+.tools{margin-top:28px;color:var(--mute);font-size:15px}
+.contact{background:var(--panel);border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(36px,5vw,60px)}
+.mail{font-size:clamp(18px,2.4vw,24px);font-weight:500;overflow-wrap:anywhere}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center}
+.note{font-size:14px;color:var(--mute);min-height:20px}
+footer{padding:28px 0 40px;color:var(--mute);font-size:14px}
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1280px);width:100%}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+.frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;margin:auto}
+.frame.vert{aspect-ratio:9/16;width:auto;height:min(86vh,1100px);max-width:96vw}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.dlg{display:flex;flex-direction:column;align-items:center;gap:10px}
+.close{all:unset;cursor:pointer;color:#fff;font:500 15px Inter,sans-serif;align-self:flex-end;min-height:44px;padding:0 6px}
+.cap{color:#cfcac1;font-size:14px;text-align:center;max-width:70ch}
+@media(max-width:900px){.case{grid-template-columns:1fr}.case aside{position:static}.split{grid-template-columns:1fr}.services,.steps{grid-template-columns:1fr}.h3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){nav ul{display:none}.v3{grid-template-columns:repeat(2,minmax(0,1fr))}.h2,.h3{grid-template-columns:1fr}.hero{min-height:78vh}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Tey Dela Peña</b><ul><li><a href="#work">Work</a></li><li><a href="#clips">Long-form to clips</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul><a class="btn" href="#contact">Hire me</a></div></nav>
+
+<header class="hero">
+  <img src="https://i.vimeocdn.com/video/2230925043-64417aa81eea06e158fc8891d78a1018c0a58154c7fa101587c8ceab3cb5b8f3-d_1280?region=us" alt="Still from the short film Sino Ka">
+  <div class="wrap">
+    <h1><span class="serif">Edits that keep people watching.</span></h1>
+    <p>I’m Tey, a video editor in the Philippines. I cut podcasts, short-form and story-driven video for coaches, educators and creators, turning long recordings into clips people actually finish.</p>
+    <div class="row"><a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#work">See the work</a></div>
+    <div class="feat"><button type="button" data-play="sinoka"><span class="play" aria-hidden="true"></span><span><span class="serif" style="font-size:20px">Sino Ka</span> — my short film, written &amp; directed</span></button><span class="dur">5:00 · English captions</span></div>
+  </div>
+</header>
+
+<div class="clients"><div class="wrap"><span>Edited for</span><strong>Cinematography for Actors (US)</strong><strong>WeMetVia (US)</strong><strong>Immaculate Conception Parish, Tayuman</strong></div></div>
+
+<section id="clips"><div class="wrap case">
+  <aside>
+    <h2><span class="serif">One long video, many clips.</span></h2>
+    <p class="lede">These came from full-length classes on Cinematography for Actors’ YouTube channel. I find the moments that stand on their own, add a hook in the first seconds, captions people can follow on mute, and an ending that sends viewers back to the full class.</p>
+    <ol><li>Pull the strongest 30–80 seconds from a long recording</li><li>Restructure it so the point lands first</li><li>Word-by-word captions, titles, cutaways</li><li>Export vertical for TikTok, Reels and Shorts</li></ol>
+  </aside>
+  <div class="grid v3" id="g-clips"></div>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+  <h2><span class="serif">Short-form</span></h2>
+  <p class="lede">Educational reels and promos for a film school’s TikTok and Instagram, two to three a week, on deadline.</p>
+  <div class="grid v3" id="g-vert"></div>
+  <div class="grid h3" id="g-horiz" style="margin-top:clamp(14px,2vw,24px)"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2><span class="serif">Stories &amp; trailers</span></h2>
+  <p class="lede">Longer pieces where pacing, music and structure carry the story.</p>
+  <div class="split"><div class="stackcol" id="g-story"></div><div class="stackcol" id="g-story2"></div></div>
+</div></section>
+
+<section id="services" style="padding-top:0"><div class="wrap">
+  <h2><span class="serif">What I can do for you</span></h2>
+  <p class="lede">Monthly packages or one-off projects. Tell me what you post and how often, and I’ll quote a package that fits.</p>
+  <div class="services">
+    <div class="svc"><h3 class="serif">Short-form</h3><p>Reels, TikToks and Shorts from your footage or recordings.</p><ul><li>Hook-first edits, captions, titles</li><li>8 or 12 reels a month</li></ul></div>
+    <div class="svc"><h3 class="serif">Long-form to clips</h3><p>Your podcast, class or talk turned into a week of posts.</p><ul><li>Clip selection and restructuring</li><li>Vertical and horizontal versions</li></ul></div>
+    <div class="svc"><h3 class="serif">Video podcast</h3><p>Full episodes cleaned up and ready for YouTube.</p><ul><li>Multicam cut, audio cleanup, color</li><li>Episode + clips bundles</li></ul></div>
+  </div>
+  <div class="steps">
+    <div><b>1. Send footage</b><span>Google Drive or Frame.io, plus a reference if you have one.</span></div>
+    <div><b>2. First cut in 48–72 hours</b><span>Two rounds of revisions included.</span></div>
+    <div><b>3. Ready to post</b><span>Exported for each platform, loudness matched.</span></div>
+  </div>
+  <p class="tools">Tools: DaVinci Resolve Studio, Premiere Pro, Frame.io. Working hours overlap with US mornings and evenings.</p>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2><span class="serif">Let’s make something people finish watching.</span></h2>
+  <p class="lede">Send a link to your channel or a recording you want cut, and what you need. I reply within a day.</p>
+  <div class="mail" id="mail">teydelapena.edits@gmail.com</div>
+  <div class="row"><a class="btn" href="mailto:teydelapena.edits@gmail.com?subject=Editing%20project">Email me</a><button class="btn ghost" type="button" id="copy">Copy email</button><span class="note" id="note" aria-live="polite"></span></div>
+</div></section>
+
+<footer><div class="wrap">© 2026 Marc Lester “Tey” Dela Peña · Video editor, Philippines</div></footer>
+
+<dialog id="dlg" aria-label="Video player"><div class="dlg"><button class="close" type="button" id="x">Close ✕</button><div class="frame" id="frame"></div><div class="cap" id="cap"></div></div></dialog>
+
+<script>
+{
+const T='https://i.vimeocdn.com/video/', S='-d_1280?region=us';
+const V={
+ sinoka:{id:'1250315787',h:'61d60c6697',t:'Sino Ka',d:'5:00',role:'Short film · written & directed by Tey · Faith Lens 2026',img:'2230925043-64417aa81eea06e158fc8891d78a1018c0a58154c7fa101587c8ceab3cb5b8f3',cc:1,cap:'On a stormy night, a teen must comfort the grandfather who no longer remembers him. In Tagalog with English captions.'},
+ cov:{id:'1250313261',v:1,t:'Actor’s Guide to Coverage and Angles',d:'1:19',role:'Clip from a full CFA class',img:'2230919082-e93665a20f61c0a0f505e1aa63f1d109ae8e8bed7ab9c77d7d06a54090a735c2'},
+ cam:{id:'1250313257',v:1,t:'Actor’s Guide to Camera Movement',d:'1:19',role:'Clip from a full CFA class',img:'2230919090-a8022e51c2f2077c9570bc413eefcffc8337753023047d52f97d06089ed3a0f2'},
+ dr3:{id:'1250313259',v:1,t:'Director’s Roundtable',d:'0:49',role:'Clip from a panel discussion',img:'2230919077-c051e1aef922ee9f9b386d1b703f8bb5eaba5be1f48e2658cc976512e923e407'},
+ moves:{id:'1250313260',v:1,t:'Camera Movements Every Filmmaker Should Know',d:'0:32',role:'Educational reel',img:'2230919062-cf47e0d8fc23008d2c53a1cb3e79f6a20e7813ad74ce7358b5edcb9333415ea0'},
+ work:{id:'1250313294',v:1,t:'What Actually Happens at a CFA Workshop',d:'0:40',role:'Promo reel',img:'2230919099-41738cca709c858ea0375534b6e92741d8eb9cdd7bd37f3278ad7ad76c48bd1b'},
+ comp:{id:'1250313296',v:1,t:'CFA Compilation',d:'1:25',role:'Brand reel',img:'2230919113-042a757889191758edcde13cb0ac4b582b8d6a47e558c70cc17b3ed4ba461af9'},
+ anx:{id:'1250313297',t:'How Filmmakers Show Anxiety',d:'0:29',role:'Educational short',img:'2230919118-030d0c352cd77545c84ec7729f3b2c24db121bee47371329c944ba9168afee44'},
+ compo:{id:'1250313298',t:'Composition Techniques',d:'0:34',role:'Educational short · motion graphics',img:'2230919122-871212142204322786e5499960742e6e61bc87c77f660e4077afec7f77aadbaf'},
+ eight:{id:'1250313329',t:'Eight Shots in One Room',d:'0:24',role:'Educational short',img:'2230919138-475161967fd9e6b09a0b9e326d0cfbded8b5bc994cc19bfce346186339ccb1ba'},
+ trailer:{id:'1250313331',t:'Film Challenge Trailer',d:'1:01',role:'Trailer cut from community short films',img:'2230919147-149978eb1d3b7830a2cbc326f187a43e1c30af0ae94d16cf5b9491ce1bdb99c6'},
+ socom:{id:'1250313334',t:'SOCOM Recruitment Video',d:'2:00',role:'Mini-documentary for a parish media ministry',img:'2230919150-9f4715ccb7f146f4f77b8503abc175096da6896dc1175d6dfdf0087b83502d4b'},
+ icp:{id:'1250318793',h:'20471b4029',t:'ICP History',d:'5:04',role:'75-year parish history documentary · written & edited · in Tagalog',img:'2230926053-e91cc482232dc3c7d6d14ec1c1ec4733609d94a0be7c60cb5ee17acf72ba97e4'},
+ rosary:{id:'1250313336',v:1,t:'Living Rosary',d:'1:31',role:'Event highlight · shot & edited',img:'2230919151-db169b8ad6ca8bc6cfc5b590c7ee551236a68ea6d0eade2d9fc0d1c97e2f28d3'}
+};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const card=k=>{const x=V[k];return `<button class="clip${x.v?' v':''}" type="button" data-play="${k}" aria-label="Play ${esc(x.t)}"><div class="thumb"><img loading="lazy" src="${T+x.img+S}" alt=""><span class="play" aria-hidden="true"></span></div><div class="meta"><h3>${esc(x.t)}</h3><p>${esc(x.role)} · <span class="dur">${x.d}</span></p></div></button>`};
+const fill=(id,keys)=>{document.getElementById(id).innerHTML=keys.map(card).join('')};
+fill('g-clips',['cov','cam','dr3']);
+fill('g-vert',['moves','work','comp']);
+fill('g-horiz',['anx','compo','eight']);
+fill('g-story',['icp','trailer','socom']);
+fill('g-story2',['rosary']);
+const dlg=document.getElementById('dlg'),frame=document.getElementById('frame'),cap=document.getElementById('cap');
+const open=k=>{const x=V[k];if(!x)return;
+ let src=`https://player.vimeo.com/video/${x.id}?autoplay=1&title=0&byline=0&portrait=0&dnt=1`+(x.h?`&h=${x.h}`:'')+(x.cc?'&texttrack=en':'');
+ frame.className='frame'+(x.v?' vert':'');
+ frame.innerHTML=`<iframe src="${src}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${esc(x.t)}"></iframe>`;
+ cap.textContent=x.cap||(x.t+' — '+x.role);
+ if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');};
+const shut=()=>{frame.innerHTML='';dlg.close?dlg.close():dlg.removeAttribute('open')};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-play]');if(b)open(b.dataset.play)});
+document.getElementById('x').addEventListener('click',shut);
+dlg.addEventListener('click',e=>{if(e.target===dlg)shut()});
+dlg.addEventListener('close',()=>{frame.innerHTML=''});
+document.getElementById('copy').addEventListener('click',async()=>{const n=document.getElementById('note');try{await navigator.clipboard.writeText(document.getElementById('mail').textContent);n.textContent='Copied.'}catch(_){n.textContent='Select the address above to copy it.'}});
+}
+</script>
+</body>
+</html>
