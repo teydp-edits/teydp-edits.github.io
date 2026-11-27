@@ -21,6 +21,9 @@
   root.classList.add('gs');
   const mm = gsap.matchMedia();
 
+  /* nav: the small name only appears once the big hero title has scrolled away */
+  ScrollTrigger.create({ trigger: '.hero h1', start: 'bottom top+=68', onEnter: () => document.querySelector('nav').classList.add('named'), onLeaveBack: () => document.querySelector('nav').classList.remove('named') });
+
   mm.add('(prefers-reduced-motion: no-preference)', () => {
     /* hero: letters rise out of their own masks, then the rest of the intro */
     const h1 = document.querySelector('.hero h1');

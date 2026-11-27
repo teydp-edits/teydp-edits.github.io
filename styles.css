@@ -156,6 +156,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
 @media not all and (hover:hover){.tile:hover img{transform:none}}
 nav{transition:transform .3s var(--ease-out),background-color .35s}
 nav.hide{transform:translateY(-100%)}
+.gs nav .logo{opacity:0;transform:translateY(10px);transition:opacity .35s var(--ease-out),transform .35s var(--ease-out)}.gs nav.named .logo{opacity:1;transform:none}
 input,textarea{transition:border-color .2s ease}
 .lb{display:grid!important;visibility:hidden;opacity:0;transition:opacity .18s ease,visibility 0s .18s}
 .lb.on{visibility:visible;opacity:1;transition:opacity .25s ease}
@@ -189,7 +190,9 @@ input,textarea{transition:border-color .2s ease}
   .logos li,.logos a{width:100%;justify-content:center}
   .logos img{height:auto!important;max-height:44px;max-width:100%;object-fit:contain}
   .logos .via{font-size:30px}
+  .logos img[alt=HDMI]{max-height:24px!important}
+  .logos li:last-child:nth-child(3n+1){grid-column:1/-1}
 }
-@media(max-width:560px){.logos ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}.logos img{max-height:48px}}
+@media(max-width:560px){.logos ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}.logos img{max-height:48px}.logos li:last-child:nth-child(3n+1){grid-column:auto}.logos li:last-child:nth-child(odd){grid-column:1/-1}}
 @media(max-width:560px){.facts,.cols,.svc{grid-template-columns:1fr}.actions .btn{flex:1 1 100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
