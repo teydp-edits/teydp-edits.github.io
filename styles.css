@@ -164,6 +164,20 @@ input,textarea{transition:border-color .2s ease}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 @media(prefers-reduced-motion:reduce){.rv .reveal{clip-path:none}.rv .reveal img{transform:none}nav.hide{transform:none}}
 
+/* GSAP layer (fx.js) takes over the entrance; the CSS one stays as the fallback */
+.gs .hero h1,.gs .hero [data-in],.gs .hero .vf{animation:none}
+.hero h1 [class*=mask]{padding:0 .02em .14em;margin-bottom:-.14em}
+.svc div{border-top:0;position:relative;--rule:1}.svc div::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line);transform:scaleX(var(--rule));transform-origin:0 50%}
+.tile .dur,.tile .im::after{z-index:2}
+.fxc{position:absolute;inset:0;width:100%!important;height:100%!important;z-index:1;pointer-events:none;display:block}
+.mode .lot{grid-area:1/1;width:22px;height:22px;display:block}.mode.lt>svg{display:none}
+.mode .lot path[fill^=rgb]{fill:currentColor}.mode .lot path[stroke^=rgb]{stroke:currentColor}
+.pl{display:inline-grid;width:20px;height:20px;margin-left:-4px}.pl svg{width:100%;height:100%}.pl.lt>svg:first-child{display:none}
+.pl path[fill^=rgb]{fill:currentColor}.pl path[stroke^=rgb]{stroke:currentColor}
+.tools ul.armed li{cursor:pointer;transition:color .2s}.tools ul.armed li:hover{color:var(--mute)}
+.tools ul.phys{position:relative;display:block;border-bottom:1px solid var(--line);overflow:hidden;touch-action:pan-y}
+.tools ul.phys li{position:absolute;left:0;top:0;padding:10px 18px 10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--bg);white-space:nowrap;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform;transition:none}
+.tools ul.phys li.grab{cursor:grabbing;border-color:var(--ink)}
 @media(max-width:900px){
   .intro,.vfwrap,.head h2,.head p,.row .tile,.row .txt,.photo,.bio,.contact .say,.contact form{grid-column:1/-1}
   .vf video,.vf img{aspect-ratio:16/11}

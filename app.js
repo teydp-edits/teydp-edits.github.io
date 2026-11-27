@@ -61,10 +61,4 @@ const pad=n=>String(n).padStart(2,'0');
 const pz=document.getElementById('pause');pz.addEventListener('click',()=>{if(vid.paused){vid.play();pz.textContent='Pause';pz.setAttribute('aria-label','Pause the loop')}else{vid.pause();pz.textContent='Play';pz.setAttribute('aria-label','Play the loop')}});if(matchMedia('(prefers-reduced-motion: reduce)').matches){vid.removeAttribute('autoplay');vid.pause();pz.textContent='Play'}
 setInterval(()=>{const t=vid.currentTime||0;tc.textContent=`00:00:${pad(Math.floor(t))}:${pad(Math.floor((t%1)*24))}`},100);
 
-/* parallax: pictures only */
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const P=[...document.querySelectorAll('[data-speed]')];
-let busy=false;
-function frame(){busy=false;const vh=innerHeight;for(const el of P){const r=el.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>vh)continue;const off=(r.top+r.height/2-vh/2)*parseFloat(el.dataset.speed);el.style.transform=`translate3d(0,${off.toFixed(1)}px,0)`+(el.tagName==='IMG'?' scale(1.1)':'')}}
-if(!reduce){addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(frame)}},{passive:true});addEventListener('resize',frame);frame()}
 }
