@@ -28,10 +28,12 @@
     /* hero: letters rise out of their own masks, then the rest of the intro */
     const h1 = document.querySelector('.hero h1');
     const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
-    SplitText.create(h1, {
-      type: 'chars', mask: 'chars', autoSplit: true, aria: 'auto',
-      onSplit(self) { return gsap.from(self.chars, { yPercent: 115, duration: 1.15, stagger: 0.045, ease: 'expo.out' }); },
-    });
+    const lg = h1.querySelectorAll('.gl');
+    gsap.set(h1.querySelector('.hph'), { transformOrigin: '50% 50%' });
+    intro.from(h1.querySelector('.hph'), { y: -150, duration: 0.9, ease: 'expo.out' }, 0)
+      .from(lg, { y: 150, duration: 1.15, stagger: 0.05, ease: 'expo.out' }, 0.12)
+      .from(h1.querySelector('.hfr'), { scale: 1.6, autoAlpha: 0, duration: 0.5, ease: 'back.out(2.2)' }, 0.75)
+      .from(h1.querySelector('.sq'), { scale: 0, duration: 0.35, ease: 'back.out(3)' }, 0.98);
     intro.from('.hero [data-in]', { y: 22, autoAlpha: 0, duration: 0.9, stagger: 0.09 }, 0.35)
       .fromTo('.hero .vf', { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' }, 0.1)
       .from('.hero .vf video', { scale: 1.3, duration: 1.8 }, 0.1);
