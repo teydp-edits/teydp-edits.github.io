@@ -29,9 +29,7 @@
     const h1 = document.querySelector('.hero h1');
     const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
     const lg = h1.querySelectorAll('.gl');
-    gsap.set(h1.querySelector('.hph'), { transformOrigin: '50% 50%' });
-    intro.from(h1.querySelector('.hph'), { y: -150, duration: 0.9, ease: 'expo.out' }, 0)
-      .from(lg, { y: 150, duration: 1.15, stagger: 0.05, ease: 'expo.out' }, 0.12)
+    intro.from(lg, { y: 150, duration: 1.15, stagger: 0.05, ease: 'expo.out' }, 0.12)
       .from(h1.querySelector('.hfr'), { scale: 1.6, autoAlpha: 0, duration: 0.5, ease: 'back.out(2.2)' }, 0.75)
       .from(h1.querySelector('.sq'), { scale: 0, duration: 0.35, ease: 'back.out(3)' }, 0.98);
     intro.from('.hero [data-in]', { y: 22, autoAlpha: 0, duration: 0.9, stagger: 0.09 }, 0.35)

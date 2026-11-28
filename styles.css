@@ -203,6 +203,6 @@ input,textarea{transition:border-color .2s ease}
 @media(hover:hover) and (pointer:fine){.rl:hover img{transform:scale(1.03);opacity:1}.rl:hover .rp{transform:scale(1.08)}}
 .rl:focus-visible{outline:2px solid var(--red);outline-offset:4px}
 @media(max-width:560px){.rp{width:64px;height:64px;margin:-32px 0 0 -32px}.rp svg{width:24px;height:24px}.rc{padding:12px 14px;font-size:13px}.reel{padding:0 0 28px}}
-.hlogo{line-height:0}.hlogo svg{display:block;width:min(680px,100%);height:auto;overflow:hidden;color:var(--ink)}
+.hlogo{line-height:0}.hlogo svg{display:block;width:min(560px,100%);height:auto;overflow:hidden;color:var(--ink)}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hlogo .hfr{transform-box:fill-box;transform-origin:50% 50%}.hlogo .sq{transform-box:fill-box;transform-origin:50% 50%}
