@@ -206,3 +206,8 @@ input,textarea{transition:border-color .2s ease}
 .hlogo{line-height:0}.hlogo svg{display:block;width:min(560px,100%);height:auto;overflow:hidden;color:var(--ink)}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hlogo .hfr{transform-box:fill-box;transform-origin:50% 50%}.hlogo .sq{transform-box:fill-box;transform-origin:50% 50%}
+.pitch{margin:-8px 0 28px;max-width:40ch;font-weight:600;line-height:1.45;padding-left:14px;border-left:3px solid var(--red)}
+.whyl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;border-top:1px solid var(--line);padding-top:32px}
+.whyl .num{display:block;color:var(--red);font-size:14px;margin-bottom:14px}.whyl h3{margin:0 0 8px;font-size:22px}.whyl p{margin:0;color:var(--mute);max-width:32ch}
+.reach{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:14px}.reach li{display:grid;grid-template-columns:96px 1fr;align-items:baseline;gap:12px}.reach span{font-size:13px;color:var(--mute)}.reach a{font-weight:600;overflow-wrap:anywhere;min-height:24px}
+@media(max-width:760px){.whyl{grid-template-columns:1fr;gap:28px}.reach li{grid-template-columns:1fr;gap:2px}.reach a{overflow-wrap:normal}}
